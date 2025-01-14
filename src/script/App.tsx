@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import '@/style/app.css';
+import '../style/App.css';
 import Home from './page/Home'
 import LampSwitch from './page/Lamp'
 
