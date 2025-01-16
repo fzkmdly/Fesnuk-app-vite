@@ -11,46 +11,61 @@ body {
 }
 
 .container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
   text-align: center;
-  margin-top: 50px;
-  font-family: Arial, sans-serif;
+  max-width: 400px;
+  width: 90%;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #007bff;
 }
 
 .lamp-status {
-  margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.lamp-status.on {
+  color: #28a745;
+}
+
+.lamp-status.off {
+  color: #dc3545;
 }
 
 .switch {
   position: relative;
-  display: inline-block;
-  width: 100px; /* Increased width */
-  height: 50px; /* Increased height */
+  width: 60px;
+  height: 30px;
   background-color: #ccc;
-  border-radius: 50px; /* Adjusted to match new height */
+  border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
+  display: inline-block;
 }
 
 .switch.on {
-  background-color: #4caf50;
+  background-color: #28a745;
 }
 
 .slider {
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 46px; /* Increased width */
-  height: 46px; /* Increased height */
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
   background-color: white;
   border-radius: 50%;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease;
 }
 
 .switch.on .slider {
-  transform: translateX(50px); /* Adjusted to match new width */
-}
-
-.switch.off .slider {
-  transform: translateX(0);
+  transform: translateX(30px);
 }
