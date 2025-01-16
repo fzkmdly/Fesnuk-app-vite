@@ -48,23 +48,19 @@ const LampSwitch: React.FC = () => {
   return (
     <div className="container">
       <h1>Lamp Control</h1>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <>
-          <div className={`lamp-status ${lampStatus ? "on" : "off"}`}>
-            Lamp is currently: <span>{lampStatus ? "ON" : "OFF"}</span>
-          </div>
-          <div
-            className={`switch ${lampStatus ? "on" : "off"}`}
-            onClick={toggleLamp}
-            role="button"
-            aria-pressed={lampStatus}
-          >
-            <div className="slider"></div>
-          </div>
-        </>
-      )}
+      <div className={`lamp-status ${lampStatus ? "on" : "off"}`}>
+        Lamp is currently: <span>{lampStatus ? "ON" : "OFF"}</span>
+      </div>
+      <div
+        className={`switch ${lampStatus ? "on" : "off"} ${loading ? "loading" : ""}`}
+        onClick={!loading ? toggleLamp : undefined}
+        role="button"
+        aria-pressed={lampStatus}
+      >
+        <div className="slider">
+          {loading && <div className="spinner"></div>}
+        </div>
+      </div>
     </div>
   );
 };
